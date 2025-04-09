@@ -137,6 +137,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     export GOOS=${TARGETOS:-linux} && \
     export GOARCH=${TARGETARCH:-amd64} && \
+    export CGO_ENABLED=${CGO_ENABLED:-1} && \
     go build -o puller model-serving-puller/main.go && \
     go build -o triton-adapter model-mesh-triton-adapter/main.go && \
     go build -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
