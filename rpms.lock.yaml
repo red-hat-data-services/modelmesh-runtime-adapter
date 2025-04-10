@@ -179,13 +179,13 @@ arches:
     name: glibc-minimal-langpack
     evr: 2.28-251.el8_10.14
     sourcerpm: glibc-2.28-251.el8_10.14.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.46.1.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.47.1.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 12405368
-    checksum: sha256:8428f719f763617c237ce6f904b948bcc723bf0ad7e3cd9a41c7b3720ebf0f50
+    size: 12405648
+    checksum: sha256:a46ada197880817cd7257fd13737407a88fee7a85ecf8eaf980e823df7cd0ebc
     name: kernel-headers
-    evr: 4.18.0-553.46.1.el8_10
-    sourcerpm: kernel-4.18.0-553.46.1.el8_10.src.rpm
+    evr: 4.18.0-553.47.1.el8_10
+    sourcerpm: kernel-4.18.0-553.47.1.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgcc-8.5.0-26.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 84096
@@ -258,7 +258,7 @@ arches:
     sourcerpm: pkgconf-1.4.2-1.el8.src.rpm
   source: []
   module_metadata:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/bb7d6177f9e38579dfb0c3b666a3e991ee52b755de2238f40943cf2a0d9c8890-modules.yaml.gz
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/c971f7c37bf8ef142dc5bb420156e61ad6ab4c57dc1b27f42b7fdb93fa40c005-modules.yaml.gz
     repoid: ubi-8-for-x86_64-appstream-rpms
-    size: 60317
-    checksum: sha256:bb7d6177f9e38579dfb0c3b666a3e991ee52b755de2238f40943cf2a0d9c8890
+    size: 60309
+    checksum: sha256:c971f7c37bf8ef142dc5bb420156e61ad6ab4c57dc1b27f42b7fdb93fa40c005
