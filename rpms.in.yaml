@@ -7,5 +7,3 @@ packages:
   - python3.11
   - python3.11-devel
   - python3.11-pip
-context:
-  containerfile: ./Dockerfile.konflux
