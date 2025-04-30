@@ -2,7 +2,7 @@
 ###############################################################################
 # Stage 1: Build the assets
 ###############################################################################
-FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi8/go-toolset:1.22@sha256:a1a37882bbcf1c0f1115d478d5ea9f74b496b8c753d5e4e431a70786e2dbcbfc AS build
+FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi9/go-toolset:1.22@sha256:e4193e71ea9f2e2504f6b4ee93cadef0fe5d7b37bba57484f4d4229801a7c063 AS build
 
 LABEL image="build"
 
@@ -26,18 +26,20 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     export GOOS=${TARGETOS:-linux} && \
     export GOARCH=${TARGETARCH:-amd64} && \
-    go build -o puller model-serving-puller/main.go && \
-    go build -o triton-adapter model-mesh-triton-adapter/main.go && \
-    go build -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
-    go build -o ovms-adapter model-mesh-ovms-adapter/main.go && \
-    go build -o torchserve-adapter model-mesh-torchserve-adapter/main.go
+    export CGO_ENABLED=${CGO_ENABLED:-1} && \
+    export GOEXPERIMENT=${GOEXPERIMENT:-strictfipsruntime} && \
+    go build -tags strictfipsruntime -o puller model-serving-puller/main.go && \
+    go build -tags strictfipsruntime -o triton-adapter model-mesh-triton-adapter/main.go && \
+    go build -tags strictfipsruntime -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
+    go build -tags strictfipsruntime -o ovms-adapter model-mesh-ovms-adapter/main.go && \
+    go build -tags strictfipsruntime -o torchserve-adapter model-mesh-torchserve-adapter/main.go
 
 
 ###############################################################################
 # Stage 2: Copy build assets to create the smallest final runtime image
 ###############################################################################
 # Runtime - ubi-minimal:latest
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:b2a1bec3dfbc7a14a1d84d98934dfe8fdde6eb822a211286601cf109cbccb075 as runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:e1c4703364c5cb58f5462575dc90345bcd934ddc45e6c32f9c162f2b5617681c as runtime
 
 ARG USER=2000
 
@@ -61,7 +63,7 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
 COPY requirements.txt requirements.txt
 ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r requirements.txt
+    /usr/bin/pip3.11 install -r requirements.txt
 RUN rm -rfv requirements.txt
 USER ${USER}
 
