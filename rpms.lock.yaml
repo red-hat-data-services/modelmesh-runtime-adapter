@@ -151,13 +151,13 @@ arches:
     name: glibc-headers
     evr: 2.28-251.el8_10.16
     sourcerpm: glibc-2.28-251.el8_10.16.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.51.1.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.54.1.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 12409036
-    checksum: sha256:6e51ebdaaf0057f6f6bbfc4154f99a15b444b7018995a9afbd8219b9a9492201
+    size: 12412516
+    checksum: sha256:3ab9edd186d9095a70bce99e2ffe4bc827f4ffac8740aa61fe53bcbf895bf76b
     name: kernel-headers
-    evr: 4.18.0-553.51.1.el8_10
-    sourcerpm: kernel-4.18.0-553.51.1.el8_10.src.rpm
+    evr: 4.18.0-553.54.1.el8_10
+    sourcerpm: kernel-4.18.0-553.54.1.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-26.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 213672
@@ -216,7 +216,7 @@ arches:
     sourcerpm: pkgconf-1.4.2-1.el8.src.rpm
   source: []
   module_metadata:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/474e327dd846d3ac01daad5dfd08bfd27df9a56f85d26692414df8068abc7538-modules.yaml.gz
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/46fe5e5711b748c24e0763d7d1fe1c62c0c05010d3ee50dde364243af6765631-modules.yaml.gz
     repoid: ubi-8-for-x86_64-appstream-rpms
-    size: 59708
-    checksum: sha256:474e327dd846d3ac01daad5dfd08bfd27df9a56f85d26692414df8068abc7538
+    size: 59487
+    checksum: sha256:46fe5e5711b748c24e0763d7d1fe1c62c0c05010d3ee50dde364243af6765631
