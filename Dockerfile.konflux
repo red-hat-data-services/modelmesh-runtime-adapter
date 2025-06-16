@@ -55,6 +55,7 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
        python3.11 \
        python3.11-pip \
     && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
+    && ln -s /usr/bin/unversioned-python /usr/bin/python \
     && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
@@ -65,6 +66,11 @@ ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
     /usr/bin/pip3.11 install -r requirements.txt
 RUN rm -rfv requirements.txt
+
+# remove python-devel and setuptools packages as it is not needed in the final runtime image
+# Fixes CVE-2025-47273
+RUN microdnf remove -y python3.11-devel python3.11-setuptools
+
 USER ${USER}
 
 # Add modelmesh version
