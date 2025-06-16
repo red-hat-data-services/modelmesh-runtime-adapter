@@ -307,7 +307,7 @@ arches:
     name: pkgconf
     evr: 1.4.2-1.el8
   module_metadata:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/30bd852f45d65ded0d32418d547068bb6ec7bae138bcd52108c349e5e7ecb9b0-modules.yaml.gz
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/0dffe96e7038fdde81ab5194b1a37c751b193f0c299036862a18c1576144a31a-modules.yaml.gz
     repoid: ubi-8-for-x86_64-appstream-rpms
-    size: 59636
-    checksum: sha256:30bd852f45d65ded0d32418d547068bb6ec7bae138bcd52108c349e5e7ecb9b0
+    size: 59591
+    checksum: sha256:0dffe96e7038fdde81ab5194b1a37c751b193f0c299036862a18c1576144a31a
