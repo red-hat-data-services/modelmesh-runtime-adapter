@@ -64,6 +64,11 @@ ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 RUN rm -rfv requirements.txt
+
+# remove python-pip and setuptools packages as it is not needed in the final runtime image
+# Fixes CVE-2025-47273
+RUN microdnf remove -y python38-pip python38-setuptools
+
 USER ${USER}
 
 # Add modelmesh version
