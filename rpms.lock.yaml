@@ -228,34 +228,6 @@ arches:
     name: expat
     evr: 2.5.0-5.el9_6
     sourcerpm: expat-2.5.0-5.el9_6.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/g/glibc-2.34-168.el9_6.20.x86_64.rpm
-    repoid: ubi-9-for-x86_64-baseos-rpms
-    size: 2053717
-    checksum: sha256:eb4b96ab337841dafa5426967fc7382fe65ab8f82bfeaaad3f7ec5749cf1aa78
-    name: glibc
-    evr: 2.34-168.el9_6.20
-    sourcerpm: glibc-2.34-168.el9_6.20.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/g/glibc-common-2.34-168.el9_6.20.x86_64.rpm
-    repoid: ubi-9-for-x86_64-baseos-rpms
-    size: 310846
-    checksum: sha256:2c0be04cfe9a3b6534d511d305d65be572a474d500f4659fd4809ca5111df504
-    name: glibc-common
-    evr: 2.34-168.el9_6.20
-    sourcerpm: glibc-2.34-168.el9_6.20.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/g/glibc-langpack-en-2.34-168.el9_6.20.x86_64.rpm
-    repoid: ubi-9-for-x86_64-baseos-rpms
-    size: 673282
-    checksum: sha256:ef9d7cd4aee8d84c7b335a6145b81729f898b3687e0e33e74095e923bd381161
-    name: glibc-langpack-en
-    evr: 2.34-168.el9_6.20
-    sourcerpm: glibc-2.34-168.el9_6.20.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/g/glibc-minimal-langpack-2.34-168.el9_6.20.x86_64.rpm
-    repoid: ubi-9-for-x86_64-baseos-rpms
-    size: 19853
-    checksum: sha256:00ae7b037bc214201a66aae7554c7ad30b54d7af91cf3c6919ed0d9af626c729
-    name: glibc-minimal-langpack
-    evr: 2.34-168.el9_6.20
-    sourcerpm: glibc-2.34-168.el9_6.20.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/g/gzip-1.12-1.el9.x86_64.rpm
     repoid: ubi-9-for-x86_64-baseos-rpms
     size: 171206
