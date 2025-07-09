@@ -32,7 +32,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 ###############################################################################
 
 #ubi-minimal:latest
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:fceb1f445ccd61a60d91d404fd76dbebaf3403e6cc2219cf6d6af4fd4bf7df6a as runtime
+FROM registry.redhat.io/ubi8/ubi-minimal@sha256:ca6e0c285facfde9d986e42fae0afcf4387e0fde2bc63656fb556710d0c34782 as runtime
 
 ARG USER=2000
 
