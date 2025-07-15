@@ -88,20 +88,20 @@ arches:
     name: python3.11-pip-wheel
     evr: 22.3.1-5.el8
     sourcerpm: python3.11-pip-22.3.1-5.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-setuptools-65.5.1-3.el8_10.noarch.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-setuptools-65.5.1-4.el8_10.noarch.rpm
     repoid: ubi-8-for-x86_64-appstream-rpms
-    size: 2059880
-    checksum: sha256:5b74fb1a9f11dd0fa6471178056d17024c0ef6e3a0516b0370d7819131a50a08
+    size: 2060136
+    checksum: sha256:d7a837ae34433e12b734e3d6d442cb90d999e02922aae070a41243198658d1c9
     name: python3.11-setuptools
-    evr: 65.5.1-3.el8_10
-    sourcerpm: python3.11-setuptools-65.5.1-3.el8_10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-setuptools-wheel-65.5.1-3.el8_10.noarch.rpm
+    evr: 65.5.1-4.el8_10
+    sourcerpm: python3.11-setuptools-65.5.1-4.el8_10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-setuptools-wheel-65.5.1-4.el8_10.noarch.rpm
     repoid: ubi-8-for-x86_64-appstream-rpms
-    size: 738900
-    checksum: sha256:9874b7dc15f0bc5fb36d0a1850dbefc33589184d8c18be81dca5290b3b37ca2d
+    size: 739056
+    checksum: sha256:7df67229045f33be154440188fa57099736533b6c5c8f63f392a4c9d7b0e35d5
     name: python3.11-setuptools-wheel
-    evr: 65.5.1-3.el8_10
-    sourcerpm: python3.11-setuptools-65.5.1-3.el8_10.src.rpm
+    evr: 65.5.1-4.el8_10
+    sourcerpm: python3.11-setuptools-65.5.1-4.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/b/binutils-2.30-125.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 6049096
@@ -231,12 +231,12 @@ arches:
     checksum: sha256:8dd7c4c22bc1e231ef1dfdde16f4080b24ea15c64ac09dbb4485ec1af84ceb0f
     name: python3.11-pip
     evr: 22.3.1-5.el8
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/source/SRPMS/Packages/p/python3.11-setuptools-65.5.1-3.el8_10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/source/SRPMS/Packages/p/python3.11-setuptools-65.5.1-4.el8_10.src.rpm
     repoid: ubi-8-for-x86_64-appstream-source-rpms
-    size: 2633000
-    checksum: sha256:0388cbe3c1eed4cb8dda9b70c11ade7a4f4e57593cd789570fe4acfabd80cdda
+    size: 2633746
+    checksum: sha256:91ae9e9d7f6c5573e7f0c6593cf2fe9f76890a0e33890859acefeaaf611b477a
     name: python3.11-setuptools
-    evr: 65.5.1-3.el8_10
+    evr: 65.5.1-4.el8_10
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/source/SRPMS/Packages/b/binutils-2.30-125.el8_10.src.rpm
     repoid: ubi-8-for-x86_64-baseos-source-rpms
     size: 21080005
