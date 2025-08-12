@@ -1,4 +1,4 @@
-module github.com/kserve/modelmesh-runtime-adapter
+module github.com/kserve/modelmesh-runtime-adapter 
 
 go 1.23.6
 
