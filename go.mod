@@ -24,8 +24,7 @@ require (
 
 require (
 	cloud.google.com/go v0.110.0 // indirect
-	cloud.google.com/go/compute v1.19.1 // indirect
-	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	cloud.google.com/go/iam v0.13.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v0.21.1 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v0.9.1 // indirect
@@ -75,6 +74,8 @@ replace (
 	golang.org/x/crypto => golang.org/x/crypto v0.17.0
 	// Update to avoid CVE-2023-45288
 	golang.org/x/net => golang.org/x/net v0.23.0
+	// Fixes CVE-2025-22868
+	golang.org/x/oauth2 => golang.org/x/oauth2 v0.27.0
 	// remove when upgrade to controller-runtime 0.15.x or apimachinery to 0.27.x
 	// Fixes github.com/elazarl/goproxy Denial of Service (DoS)
 	// This dependency was removed from apimachinery 0.27.0
