@@ -28,9 +28,9 @@ ENV HOME=/root
 # NOTE: Require python311 to install pre-commit
 RUN --mount=type=cache,target=/root/.cache/dnf:rw \
     dnf install --setopt=cachedir=/root/.cache/dnf -y --nodocs \
-        nodejs \
-        python3.11 \
-        python3.11-pip \
+    nodejs \
+    python3.11 \
+    python3.11-pip \
     && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
     && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
@@ -90,7 +90,7 @@ ENV PATH $GOPATH/bin:$PATH
 RUN true \
     && go get google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     && go install google.golang.org/protobuf/cmd/protoc-gen-go \
-                  google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+    google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     && protoc-gen-go --version \
     && true
 
@@ -157,11 +157,11 @@ USER root
 # NOTE: tensorflow not supported on PowerPC (ppc64le) or System Z (s390x) https://github.com/tensorflow/tensorflow/issues/46181
 RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
     microdnf install -y --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-9-appstream-rpms.module_hotfixes=1 \
-       gcc \
-       gcc-c++ \
-       python3.11-devel \
-       python3.11 \
-       python3.11-pip \
+    gcc \
+    gcc-c++ \
+    python3.11-devel \
+    python3.11 \
+    python3.11-pip \
     && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
     && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
@@ -192,10 +192,10 @@ ARG IMAGE_VERSION
 ARG COMMIT_SHA
 
 LABEL name="model-serving-runtime-adapter" \
-      version="${IMAGE_VERSION}" \
-      release="${COMMIT_SHA}" \
-      summary="Sidecar container which runs in the ModelMesh Serving model server pods" \
-      description="Container which runs in each model serving pod acting as an intermediary between ModelMesh and third-party model-server containers"
+    version="${IMAGE_VERSION}" \
+    release="${COMMIT_SHA}" \
+    summary="Sidecar container which runs in the ModelMesh Serving model server pods" \
+    description="Container which runs in each model serving pod acting as an intermediary between ModelMesh and third-party model-server containers"
 
 # Don't define an entrypoint. This is a multi-purpose image so the user should specify which binary they want to run (e.g. /opt/app/puller or /opt/app/triton-adapter)
 # ENTRYPOINT ["/opt/app/puller"]

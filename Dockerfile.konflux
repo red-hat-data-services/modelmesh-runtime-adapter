@@ -1,0 +1,96 @@
+
+###############################################################################
+# Stage 1: Build the assets
+###############################################################################
+FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi9/go-toolset:1.23@sha256:381fb72f087a07432520fa93364f66b5981557f1dd708f3c4692d6d0a76299b3 AS build
+
+LABEL image="build"
+
+USER root
+
+# needed for konflux as the previous stage is not used
+WORKDIR /opt/app
+COPY go.mod go.sum ./
+# Download dependencies before copying the source so they will be cached
+RUN go mod download
+
+# Copy the source
+COPY . ./
+
+ARG TARGETOS=amd64
+ARG TARGETARCH=linux
+
+# Build the binaries using native go compiler from BUILDPLATFORM but compiled output for TARGETPLATFORM
+# https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
+RUN --mount=type=cache,target=/root/.cache/go-build \
+    --mount=type=cache,target=/go/pkg \
+    export GOOS=${TARGETOS:-linux} && \
+    export GOARCH=${TARGETARCH:-amd64} && \
+    export CGO_ENABLED=${CGO_ENABLED:-1} && \
+    export GOEXPERIMENT=${GOEXPERIMENT:-strictfipsruntime} && \
+    go build -tags strictfipsruntime -o puller model-serving-puller/main.go && \
+    go build -tags strictfipsruntime -o triton-adapter model-mesh-triton-adapter/main.go && \
+    go build -tags strictfipsruntime -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
+    go build -tags strictfipsruntime -o ovms-adapter model-mesh-ovms-adapter/main.go && \
+    go build -tags strictfipsruntime -o torchserve-adapter model-mesh-torchserve-adapter/main.go
+
+
+###############################################################################
+# Stage 2: Copy build assets to create the smallest final runtime image
+###############################################################################
+# Runtime - ubi-minimal:latest
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:8d905a93f1392d4a8f7fb906bd49bf540290674b28d82de3536bb4d0898bf9d7 as runtime
+
+ARG USER=2000
+
+USER root
+
+# install python to convert keras to tf
+# NOTE: tensorflow not supported on PowerPC (ppc64le) or System Z (s390x) https://github.com/tensorflow/tensorflow/issues/46181
+RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
+    microdnf install -y --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-9-appstream-rpms.module_hotfixes=1 \
+       gcc \
+       gcc-c++ \
+       python3.11-devel \
+       python3.11 \
+       python3.11-pip \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
+    && true
+
+# need to upgrade pip and install wheel before installing grpcio, before installing tensorflow on aarch64
+# use caching to speed up multi-platform builds
+COPY requirements.txt requirements.txt
+ENV PIP_CACHE_DIR=/root/.cache/pip
+RUN --mount=type=cache,target=/root/.cache/pip \
+    /usr/bin/pip3.11 install -r requirements.txt
+RUN rm -rfv requirements.txt
+USER ${USER}
+
+# Add modelmesh version
+COPY version /etc/modelmesh-version
+
+# Copy over the binary and use it as the entrypoint
+COPY --from=build /opt/app/puller /opt/app/
+COPY --from=build /opt/app/triton-adapter /opt/app/
+COPY --from=build /opt/app/mlserver-adapter /opt/app/
+COPY --from=build /opt/app/model-mesh-triton-adapter/scripts/tf_pb.py /opt/scripts/
+COPY --from=build /opt/app/ovms-adapter /opt/app/
+COPY --from=build /opt/app/torchserve-adapter /opt/app/
+
+# wait to create commit-specific LABEL until end of the build to not unnecessarily
+# invalidate the cached image layers
+ARG IMAGE_VERSION
+ARG COMMIT_SHA
+
+LABEL com.redhat.component="odh-modelmesh-runtime-adapter-container" \
+      name="managed-open-data-hub/odh-modelmesh-runtime-adapter-container-rhel8" \
+      description="Container which runs in each model serving pod and act as an intermediary between model-mesh and third-party model-server containers" \
+      summary="odh-model-serving-runtime-adapter" \
+      maintainer="['managed-open-data-hub@redhat.com']" \
+      io.k8s.display-name="odh-model-serving-runtime-adapter" \
+      io.k8s.description="odh-model-serving-runtime-adapter" \
+      com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
+      
+# Don't define an entrypoint. This is a multi-purpose image so the user should specify which binary they want to run (e.g. /opt/app/puller or /opt/app/triton-adapter)
+# ENTRYPOINT ["/opt/app/puller"]

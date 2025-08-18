@@ -211,6 +211,8 @@ Once the final container is built, you can access it:
 podman run <modelmesh-runtime-adapter-container-name> sh -c 'pip freeze'
 ```
 
+`pip freeze` might omit some pachages, using `pip list` and formatting the `requirements.txt` has a more accurate result.
+
 Note, for `tensorflow-io-gcs-filesystem` it must be pinned to **0.34.0** manually after generating the `requirements.txt` file.`
 
 Then commit the changes and push.
