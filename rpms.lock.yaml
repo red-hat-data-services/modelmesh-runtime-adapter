@@ -32,13 +32,13 @@ arches:
     name: glibc-devel
     evr: 2.34-168.el9_6.23
     sourcerpm: glibc-2.34-168.el9_6.23.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/k/kernel-headers-5.14.0-570.32.1.el9_6.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/k/kernel-headers-5.14.0-570.35.1.el9_6.aarch64.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 3659405
-    checksum: sha256:71476f885d8121ed79180cfff11da7e69901da4d8963f369ee877a93fc9ef8f9
+    size: 3667373
+    checksum: sha256:062c0872333408b52aab8e7c6bc948b138cebd85032c68fd83726de8de8deea2
     name: kernel-headers
-    evr: 5.14.0-570.32.1.el9_6
-    sourcerpm: kernel-5.14.0-570.32.1.el9_6.src.rpm
+    evr: 5.14.0-570.35.1.el9_6
+    sourcerpm: kernel-5.14.0-570.35.1.el9_6.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/l/libasan-11.5.0-5.el9_5.aarch64.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
     size: 413819
@@ -123,20 +123,20 @@ arches:
     name: python3.11-pip-wheel
     evr: 22.3.1-5.el9
     sourcerpm: python3.11-pip-22.3.1-5.el9.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/p/python3.11-setuptools-65.5.1-3.el9.noarch.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/p/python3.11-setuptools-65.5.1-4.el9_6.noarch.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 1800394
-    checksum: sha256:beae6c2ed08b28236462f282ad5a6b79bb320bc30be551621beb81df5ed10a08
+    size: 1794566
+    checksum: sha256:15b72546d2964e02c54f0f9ed45dec5e7a5c179899668e020f920357705f7455
     name: python3.11-setuptools
-    evr: 65.5.1-3.el9
-    sourcerpm: python3.11-setuptools-65.5.1-3.el9.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/p/python3.11-setuptools-wheel-65.5.1-3.el9.noarch.rpm
+    evr: 65.5.1-4.el9_6
+    sourcerpm: python3.11-setuptools-65.5.1-4.el9_6.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/p/python3.11-setuptools-wheel-65.5.1-4.el9_6.noarch.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 732455
-    checksum: sha256:1c62d47b95503b00ba45db358d2611d94575a579e47fcaa0ce134ae21b4509de
+    size: 729097
+    checksum: sha256:0887cbc9f8c1d8f73d6292d6ae4ac21db8da6fade83279fc40cd35f884cfcb70
     name: python3.11-setuptools-wheel
-    evr: 65.5.1-3.el9
-    sourcerpm: python3.11-setuptools-65.5.1-3.el9.src.rpm
+    evr: 65.5.1-4.el9_6
+    sourcerpm: python3.11-setuptools-65.5.1-4.el9_6.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/os/Packages/a/acl-2.3.1-4.el9.aarch64.rpm
     repoid: ubi-9-for-aarch64-baseos-rpms
     size: 77245
@@ -413,12 +413,12 @@ arches:
     checksum: sha256:5bf6cb4965960cdb7f0191426f26acb9d08f207259c5b3cb1a9ee5bbc42f719b
     name: python3.11-pip
     evr: 22.3.1-5.el9
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/source/SRPMS/Packages/p/python3.11-setuptools-65.5.1-3.el9.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/source/SRPMS/Packages/p/python3.11-setuptools-65.5.1-4.el9_6.src.rpm
     repoid: ubi-9-for-aarch64-appstream-source-rpms
-    size: 2634133
-    checksum: sha256:03be5041ff491fc4db6cc35e7c525449235968f64165dffa5c849e1d0419dcea
+    size: 2631332
+    checksum: sha256:68d30af3e04b3b482217b1d0cc48b59329da592fc9fc0c10fe5242cff18340fd
     name: python3.11-setuptools
-    evr: 65.5.1-3.el9
+    evr: 65.5.1-4.el9_6
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/source/SRPMS/Packages/a/acl-2.3.1-4.el9.src.rpm
     repoid: ubi-9-for-aarch64-baseos-source-rpms
     size: 535332
