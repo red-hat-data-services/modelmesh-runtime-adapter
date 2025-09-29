@@ -107,25 +107,25 @@ jobs:
         run: |
           CURRENT_TAG="${{ github.event.inputs.tag_name }}"
           NEXT_TAG="${{ github.event.inputs.next_odh_tag }}"
-          
+
           echo "Updating ODH tag from $CURRENT_TAG to $NEXT_TAG..."
-          
+
           # Using sed to replace the current ODH tag with the next one,
           # anchored to the image name to prevent over-matching.
           sed -i "s|modelmesh-runtime-adapter:${CURRENT_TAG}|modelmesh-runtime-adapter:${NEXT_TAG}|g" .tekton/odh-modelmesh-runtime-adapter-push.yaml
 
           echo "Update complete."
-          
+
       - name: Commit and Push Changes
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
           git add .tekton/odh-modelmesh-runtime-adapter-push.yaml
-          
+
           # Check for changes before committing
           if [[ -z "$(git status --porcelain)" ]]; then
             echo "No changes to commit. Exiting."
           else
             git commit -m "chore(konflux): Bump ODH release tag to ${{ github.event.inputs.next_odh_tag }}"
             git push
-          fi  
+          fi
