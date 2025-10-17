@@ -7,8 +7,10 @@ metadata:
     build.appstudio.redhat.com/target_branch: "{{target_branch}}"
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch == "release-0.12.0-rc0"
-  creationTimestamp:
+    pipelinesascode.tekton.dev/on-cel-expression:
+      event == "push" && target_branch
+      == "release-0.12.0-rc0"
+  creationTimestamp: null
   labels:
     appstudio.openshift.io/application: opendatahub-release
     appstudio.openshift.io/component: odh-modelmesh-runtime-adapter
@@ -22,7 +24,7 @@ spec:
     - name: revision
       value: "{{revision}}"
     - name: output-image
-      value: quay.io/opendatahub/modelmesh-runtime-adapter:odh-v2.34
+      value: quay.io/opendatahub/modelmesh-runtime-adapter:odh-v2.36
     - name: dockerfile
       value: Dockerfile
     - name: path-context
