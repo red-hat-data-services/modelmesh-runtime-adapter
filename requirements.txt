@@ -15,11 +15,11 @@ grpcio==1.66.1
 h5py==3.10.0
 idna==3.8
 importlib-metadata==8.4.0
-keras==2.13.1
+keras==3.11.3
 libclang==18.1.1
 Markdown==3.7
 MarkupSafe==2.1.5
-numpy==1.24.3
+numpy==1.26.4
 oauthlib==3.2.2
 opt-einsum==3.3.0
 packaging==24.1
@@ -30,9 +30,9 @@ requests==2.32.3
 requests-oauthlib==2.0.0
 rsa==4.9
 six==1.16.0
-tensorboard==2.13.0
+tensorboard==2.16.0
 tensorboard-data-server==0.7.2
-tensorflow==2.13.1
+tensorflow==2.16.1
 tensorflow-estimator==2.13.0
 # Note, for `tensorflow-io-gcs-filesystem` it must be pinned to 0.34.0 manually after generating the `requirements.txt` file.
 tensorflow-io-gcs-filesystem==0.34.0
@@ -40,7 +40,7 @@ termcolor==2.4.0
 typing-extensions==4.5.0
 urllib3==2.2.2
 werkzeug==3.0.6
-wheel==0.44.0
+wheel==0.45.1
 wrapt==1.16.0
 zipp==3.20.1
 
