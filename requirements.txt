@@ -26,7 +26,7 @@ packaging==24.1
 protobuf==4.25.4
 pyasn1==0.6.0
 pyasn1-modules==0.4.0
-requests==2.32.3
+requests==2.32.4
 requests-oauthlib==2.0.0
 rsa==4.9
 six==1.16.0
@@ -38,7 +38,7 @@ tensorflow-estimator==2.13.0
 tensorflow-io-gcs-filesystem==0.34.0
 termcolor==2.4.0
 typing-extensions==4.5.0
-urllib3==2.2.2
+urllib3==2.5.0
 werkzeug==3.0.6
 wheel==0.45.1
 wrapt==1.16.0
