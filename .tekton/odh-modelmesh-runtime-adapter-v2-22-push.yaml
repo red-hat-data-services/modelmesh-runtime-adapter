@@ -1,6 +1,6 @@
 apiVersion: tekton.dev/v1
 kind: PipelineRun
-#test3
+#test
 metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/red-hat-data-services/modelmesh-runtime-adapter?rev={{revision}}
@@ -30,7 +30,7 @@ spec:
     - '{{target_branch}}-{{revision}}'
   - name: additional-labels
     value: 
-    - version=v2.22.1
+    - version=v2.22.3
     - io.openshift.tags=odh-model-serving-runtime-adapter
   - name: output-image
     value: quay.io/rhoai/odh-modelmesh-runtime-adapter-rhel9:{{target_branch}}
