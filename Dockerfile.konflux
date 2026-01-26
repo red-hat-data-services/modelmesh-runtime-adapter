@@ -51,23 +51,28 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
     microdnf install --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
        gcc \
        gcc-c++ \
-       python38-devel \
-       python38 \
-    && ln -sf /usr/bin/python3 /usr/bin/python \
-    && ln -sf /usr/bin/pip3 /usr/bin/pip \
+       python3.11-devel \
+       python3.11 \
+       python3.11-pip \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
 # need to upgrade pip and install wheel before installing grpcio, before installing tensorflow on aarch64
 # use caching to speed up multi-platform builds
 COPY requirements.txt requirements.txt
 ENV PIP_CACHE_DIR=/root/.cache/pip
+RUN pip cache purge
+RUN pip install pipdeptree  && pipdeptree
+RUN pip install -r requirements.txt --dry-run -v
+
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 RUN rm -rfv requirements.txt
 
 # remove python-pip and setuptools packages as it is not needed in the final runtime image
 # Fixes CVE-2025-47273
-RUN microdnf remove -y python38-pip python38-setuptools
+RUN microdnf remove -y python3.11-pip python3.11-setuptools
 
 USER ${USER}
 
