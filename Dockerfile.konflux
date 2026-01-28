@@ -1,8 +1,7 @@
-
 #ARG BUILD_BASE=develop
 
-#go-1.23
-FROM registry.redhat.io/ubi9/go-toolset:1.23@sha256:381fb72f087a07432520fa93364f66b5981557f1dd708f3c4692d6d0a76299b3 AS build
+#go-1.25.5
+FROM registry.redhat.io/ubi9/go-toolset:1.25.5@sha256:359dd4c6c4255b3f7bce4dc15ffa5a9aa65a401f819048466fa91baa8244a793 AS build
 
 #FROM --platform=$BUILDPLATFORM $BUILD_BASE AS build
 
