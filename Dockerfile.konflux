@@ -61,9 +61,6 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
 # use caching to speed up multi-platform builds
 COPY requirements.txt requirements.txt
 ENV PIP_CACHE_DIR=/root/.cache/pip
-RUN pip cache purge
-RUN pip install pipdeptree  && pipdeptree
-RUN pip install -r requirements.txt --dry-run -v
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
