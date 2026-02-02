@@ -37,8 +37,8 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 ###############################################################################
 # Stage 3: Copy build assets to create the smallest final runtime image
 ###############################################################################
-#ubi-minimal:latest
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:fba1e7fb1f50cd7b021c8379f207fb744b00ff55c7f539f15b40709a38cb4cde as runtime
+#ubi9-minimal:latest
+FROM registry.redhat.io/ubi9/ubi-minimal@sha256:bb08f2300cb8d12a7eb91dddf28ea63692b3ec99e7f0fa71a1b300f2756ea829 as runtime
 
 ARG USER=2000
 
@@ -47,7 +47,7 @@ USER root
 # install python to convert keras to tf
 # NOTE: tensorflow not supported on PowerPC (ppc64le) or System Z (s390x) https://github.com/tensorflow/tensorflow/issues/46181
 RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
-    microdnf install --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
+    microdnf install -y --setopt=cachedir=/root/.cache/microdnf \
        gcc \
        gcc-c++ \
        python3.11-devel \
@@ -92,7 +92,7 @@ ARG IMAGE_VERSION
 ARG COMMIT_SHA
 
 LABEL com.redhat.component="odh-modelmesh-runtime-adapter-container" \
-      name="managed-open-data-hub/odh-modelmesh-runtime-adapter-container-rhel8" \
+      name="managed-open-data-hub/odh-modelmesh-runtime-adapter-container-rhel9" \
       description="Container which runs in each model serving pod and act as an intermediary between model-mesh and third-party model-server containers" \
       summary="odh-model-serving-runtime-adapter" \
       maintainer="['managed-open-data-hub@redhat.com']" \
