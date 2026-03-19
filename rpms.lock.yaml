@@ -74,27 +74,27 @@ arches:
         name: npm
         evr: 1:6.14.11-1.10.24.0.1.module+el8.3.0+10166+b07ac28e
         sourcerpm: nodejs-10.24.0-1.module+el8.3.0+10166+b07ac28e.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-3.11.13-4.el8_10.x86_64.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-3.11.13-5.el8_10.x86_64.rpm
         repoid: ubi-8-for-x86_64-appstream-rpms
-        size: 31552
-        checksum: sha256:71e3bb071975ca5fee25feab7f2d15157b1bfe103013638a819bb386438ebb28
+        size: 31760
+        checksum: sha256:62d65349cd90b192a32ac03692847be522aa691e67bc189d61d3be5c10cc6b82
         name: python3.11
-        evr: 3.11.13-4.el8_10
-        sourcerpm: python3.11-3.11.13-4.el8_10.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-devel-3.11.13-4.el8_10.x86_64.rpm
+        evr: 3.11.13-5.el8_10
+        sourcerpm: python3.11-3.11.13-5.el8_10.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-devel-3.11.13-5.el8_10.x86_64.rpm
         repoid: ubi-8-for-x86_64-appstream-rpms
-        size: 254864
-        checksum: sha256:a47eb535707351b06420daa26ea04980b974035008f545fd5c2bdd850a3cc3ed
+        size: 255068
+        checksum: sha256:a6806bee13d6b1f5921a44f7b27d71f07a97f79a4f76b4dfd9f08d49d69850a3
         name: python3.11-devel
-        evr: 3.11.13-4.el8_10
-        sourcerpm: python3.11-3.11.13-4.el8_10.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-libs-3.11.13-4.el8_10.x86_64.rpm
+        evr: 3.11.13-5.el8_10
+        sourcerpm: python3.11-3.11.13-5.el8_10.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-libs-3.11.13-5.el8_10.x86_64.rpm
         repoid: ubi-8-for-x86_64-appstream-rpms
-        size: 10908552
-        checksum: sha256:df98e2b230de6bb25159db00fac748819afba5af893012ea0b729738afbeae3f
+        size: 10909420
+        checksum: sha256:49340d9c265bdc694fcf64e25b2c7eed46b9f33156372448e829c39e447b15f1
         name: python3.11-libs
-        evr: 3.11.13-4.el8_10
-        sourcerpm: python3.11-3.11.13-4.el8_10.src.rpm
+        evr: 3.11.13-5.el8_10
+        sourcerpm: python3.11-3.11.13-5.el8_10.src.rpm
       - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/p/python3.11-pip-22.3.1-5.el8.noarch.rpm
         repoid: ubi-8-for-x86_64-appstream-rpms
         size: 3350496
@@ -144,27 +144,27 @@ arches:
         name: gdbm-libs
         evr: 1:1.18-2.el8
         sourcerpm: gdbm-1.18-2.el8.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-devel-2.28-251.el8_10.27.x86_64.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-devel-2.28-251.el8_10.31.x86_64.rpm
         repoid: ubi-8-for-x86_64-baseos-rpms
-        size: 91520
-        checksum: sha256:ffa22c1c95e19754dc67850661813d8c22676fd1ed5279df9a927a55e8863909
+        size: 92052
+        checksum: sha256:f30ab84c826090d036085df0ed264ec66d01327e093153e0c4ceeb3a233a9beb
         name: glibc-devel
-        evr: 2.28-251.el8_10.27
-        sourcerpm: glibc-2.28-251.el8_10.27.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-headers-2.28-251.el8_10.27.x86_64.rpm
+        evr: 2.28-251.el8_10.31
+        sourcerpm: glibc-2.28-251.el8_10.31.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-headers-2.28-251.el8_10.31.x86_64.rpm
         repoid: ubi-8-for-x86_64-baseos-rpms
-        size: 506300
-        checksum: sha256:d0d26bd326d41c2910b9def24dc412495df29b909fbcbc92cbee08ba68e071e0
+        size: 506776
+        checksum: sha256:cd63cdaf6a4574cdb8e4df24f1e0b57736dc7b324c9ce77844dc9673c7c99459
         name: glibc-headers
-        evr: 2.28-251.el8_10.27
-        sourcerpm: glibc-2.28-251.el8_10.27.src.rpm
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.100.1.el8_10.x86_64.rpm
+        evr: 2.28-251.el8_10.31
+        sourcerpm: glibc-2.28-251.el8_10.31.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.111.1.el8_10.x86_64.rpm
         repoid: ubi-8-for-x86_64-baseos-rpms
-        size: 12477472
-        checksum: sha256:ab4da63ad45b49d7e623dc6e778e632fed82ae2fb4580784e56099c3eba8d10a
+        size: 12484560
+        checksum: sha256:5bf4da635fc90aae5527bc8d1986f949697fb74a2cb678fff594c57e9beef096
         name: kernel-headers
-        evr: 4.18.0-553.100.1.el8_10
-        sourcerpm: kernel-4.18.0-553.100.1.el8_10.src.rpm
+        evr: 4.18.0-553.111.1.el8_10
+        sourcerpm: kernel-4.18.0-553.111.1.el8_10.src.rpm
       - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-28.el8_10.x86_64.rpm
         repoid: ubi-8-for-x86_64-baseos-rpms
         size: 213900
@@ -246,12 +246,12 @@ arches:
         checksum: sha256:93195998625290dbeeaaaab5fffe3eaa76bd8a6d1191fa37638f4cfc23cd64b7
         name: nodejs
         evr: 1:10.24.0-1.module+el8.3.0+10166+b07ac28e
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/source/SRPMS/Packages/p/python3.11-3.11.13-4.el8_10.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/source/SRPMS/Packages/p/python3.11-3.11.13-5.el8_10.src.rpm
         repoid: ubi-8-for-x86_64-appstream-source-rpms
-        size: 20195688
-        checksum: sha256:f7b159edb3b04194acc622e6368f049d2ce2961f08f96c6f4d76f8237c823cb5
+        size: 20201661
+        checksum: sha256:88238f896bf2461422935f91c65689ddc060fc309b64d0e62b14a00b27e8f0d7
         name: python3.11
-        evr: 3.11.13-4.el8_10
+        evr: 3.11.13-5.el8_10
       - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/source/SRPMS/Packages/p/python3.11-pip-22.3.1-5.el8.src.rpm
         repoid: ubi-8-for-x86_64-appstream-source-rpms
         size: 9350582
@@ -288,12 +288,12 @@ arches:
         checksum: sha256:e91abeb46538fc264936c0eed825c28eab9eef47288c9eb1d2d4d078bccad5d1
         name: gdbm
         evr: 1:1.18-2.el8
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/source/SRPMS/Packages/g/glibc-2.28-251.el8_10.27.src.rpm
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/source/SRPMS/Packages/g/glibc-2.28-251.el8_10.31.src.rpm
         repoid: ubi-8-for-x86_64-baseos-source-rpms
-        size: 18525139
-        checksum: sha256:c3f8d7e92cffbd4e81c33871b5c55034b3f11c7417e6d84805a67e52cc6ebec1
+        size: 18530096
+        checksum: sha256:422e64a8dceb1e2bed6837d00d4d0188a8e2639fff9475f2723cd9fe84c6b6f1
         name: glibc
-        evr: 2.28-251.el8_10.27
+        evr: 2.28-251.el8_10.31
       - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/source/SRPMS/Packages/l/libnsl2-1.2.0-2.20180605git4a062cf.el8.src.rpm
         repoid: ubi-8-for-x86_64-baseos-source-rpms
         size: 147827
@@ -319,7 +319,7 @@ arches:
         name: pkgconf
         evr: 1.4.2-1.el8
     module_metadata:
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/69c12fe0c5c910f40b66b6d8c52c03e4e878aa0ac40846fcbe1b5536b805b614-modules.yaml.gz
+      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/17bb31511e42f4ffb22b2cc098aa70dc0885711dc4c4193481f9890cb78e1e34-modules.yaml.gz
         repoid: ubi-8-for-x86_64-appstream-rpms
-        size: 59425
-        checksum: sha256:69c12fe0c5c910f40b66b6d8c52c03e4e878aa0ac40846fcbe1b5536b805b614
+        size: 59447
+        checksum: sha256:17bb31511e42f4ffb22b2cc098aa70dc0885711dc4c4193481f9890cb78e1e34
