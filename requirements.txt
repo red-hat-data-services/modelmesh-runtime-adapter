@@ -14,7 +14,7 @@ idna==3.10
 # Pin to 3.12.0 due CVE-2025-12060
 keras==3.12.0
 libclang==18.1.1
-Markdown==3.8
+Markdown==3.8.1
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 mdurl==0.1.2
