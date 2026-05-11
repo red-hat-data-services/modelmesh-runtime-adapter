@@ -24,6 +24,9 @@ opt_einsum==3.4.0
 optree==0.16.0
 packaging==25.0
 protobuf==5.29.5
+# CVE-2026-23490: pyasn1 denial of service via malformed RELATIVE-OID; fixed in 0.6.2.
+# Pinning because it is a transitive dependency.
+pyasn1==0.6.2
 Pygments==2.19.1
 requests==2.32.4
 rich==14.0.0
