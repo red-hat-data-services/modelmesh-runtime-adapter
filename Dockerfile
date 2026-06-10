@@ -172,6 +172,9 @@ ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
 RUN rm -rfv requirements.txt
+
+# CVE-2026-8643: Remove pip and build-time-only packages from the final image
+RUN microdnf remove -y python3.11-pip gcc gcc-c++ python3.11-devel && microdnf clean all
 USER ${USER}
 
 # Add modelmesh version
