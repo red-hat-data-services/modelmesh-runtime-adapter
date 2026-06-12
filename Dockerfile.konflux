@@ -66,8 +66,16 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     /usr/bin/pip3.11 install -r requirements.txt
 RUN rm -rfv requirements.txt
 
-# CVE-2026-8643: Remove pip and build-time-only packages from the final image
-RUN microdnf remove -y python3.11-pip gcc gcc-c++ python3.11-devel && microdnf clean all
+# CVE-2026-8643: Remove pip, wheel, and build-time-only packages from the final image
+# 1. Remove pip and wheel from Python site-packages (installed via requirements.txt)
+# 2. Remove build-time RPMs
+# 3. Remove pip-wheel and setuptools-wheel RPMs (bundled wheel archives).
+#    This breaks the RPM dependency tree, however, no package installation
+#    or removal is expected in the runtime image.
+RUN pip uninstall pip wheel -y \
+    && microdnf remove -y python3.11-pip gcc gcc-c++ python3.11-devel \
+    && rpm -e --nodeps python3.11-pip-wheel python3.11-setuptools-wheel \
+    && microdnf clean all
 USER ${USER}
 
 # Add modelmesh version
